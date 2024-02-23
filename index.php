@@ -1,4 +1,33 @@
 <?php
+class Director
+{
+    // Proprietà
+    // Variabili d'istanza
+public $full_name;
+
+// Costruttore
+//! Permette di eseguire azioni nel momento in cui viene creata l'istanza della classe
+public function __construct(string $full_name)
+{
+$this->full_name = $full_name;
+}
+
+}
+
+// Creo un regista
+$director_1 = new Director('Sam Raimi');
+//  var_dump($director_1);
+
+// Creo un secondo regista
+$director_2 = new Director('Jon Favreau');
+//  var_dump($director_2);
+
+// Creo un terzo regista
+$director_3 = new Director('Michael Bay');
+//  var_dump($director_3);
+
+//! ---------------------------------------------
+
 class Movie
 {
     // Proprietà
@@ -7,21 +36,27 @@ public $title;
 public $plot;
 public $genre;
 public $year;
+public $director;
 
-// Costruttore
-//! Permette di eseguire azioni nel momento in cui viene creata l'istanza della classe
-public function __construct($title, $plot, $genre, $year = null)
+
+//! Permette di eseguire az// Costruttoreioni nel momento in cui viene creata l'istanza della classe
+public function __construct($title, $plot, $genre, $year, Director $director)
 {
- $this->title = $title;
- $this->plot = $plot;
- $this->genre = $genre;
- $this->year = $year;
- $this->createMovie();
+    $this->title = $title;
+    $this->plot = $plot;
+    $this->genre = $genre;
+    $this->year = $year;
+    $this->director = $director;
+    $this->createMovie();
 }
 
   public function createMovie()
   {
-    echo "<strong>Titolo:</strong> $this->title<br><strong>Trama:</strong> $this->plot<br><strong>Genere:</strong> $this->genre<br><strong>Anno:</strong> $this->year<br><hr>";
+    echo "<strong>Titolo:</strong> $this->title<br>
+    <strong>Trama:</strong> $this->plot<br>
+    <strong>Genere:</strong> $this->genre<br>
+    <strong>Anno:</strong> $this->year<br>
+    <strong>Regia:</strong> {$this->director->full_name}<hr>";
   }
 }
 
@@ -32,13 +67,13 @@ $plot_2 = "Iron Man, è un film del 2008 diretto da Jon Favreau. Tony Stark (Rob
 $plot_3 = "La lotta tra il bene (gli Autobots) e il male (i Decepticons), dal pianeta Cybertron si è spostata sulla Terra dove milioni di anni fa è caduto il Cubo di Energon, il potere supremo capace di infondere la vita ai Transformers. Sam Witwicky - nipote dell'esploratore che per primo, durante una missione nel Circolo Polare Artico sul finire del 1800, ebbe a che fare con Megatron, il capo dei Decepticons - è l'unico che può aiutare Optimus Prime e i suoi Autobots a ritrovare il cubo e distruggerlo prima che finisca nelle mani dei nemici.";
 
 // Creo un movie1
-$movie_1 = new Movie('Spider-Man', $plot_1, 'Action/Fantasy', 2003);
+$movie_1 = new Movie('Spider-Man', $plot_1, 'Action/Fantasy', 2003, $director_1);
 // var_dump($movie_1);
 
 // Creo un movie2
-$movie_2 = new Movie('Iron Man', $plot_2, 'Action/Fantasy', 2008);
+$movie_2 = new Movie('Iron Man', $plot_2, 'Action/Fantasy', 2008, $director_2);
 // var_dump($movie_2);
 
 // Creo un movie3
-$movie_3 = new Movie('Transformers', $plot_3, 'Action/Fantasy', 2007);
+$movie_3 = new Movie('Transformers', $plot_3, 'Action/Fantasy', 2007, $director_3);
 // var_dump($movie_3);
