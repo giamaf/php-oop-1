@@ -1,0 +1,44 @@
+<?php
+class Movie
+{
+    // Proprietà
+    // Variabili d'istanza
+public $title;
+public $plot;
+public $genre;
+public $year;
+
+// Costruttore
+//! Permette di eseguire azioni nel momento in cui viene creata l'istanza della classe
+public function __construct($title, $plot, $genre, $year = null)
+{
+ $this->title = $title;
+ $this->plot = $plot;
+ $this->genre = $genre;
+ $this->year = $year;
+ $this->createMovie();
+}
+
+  public function createMovie()
+  {
+    echo "<strong>Titolo:</strong> $this->title<br><strong>Trama:</strong> $this->plot<br><strong>Genere:</strong> $this->genre<br><strong>Anno:</strong> $this->year<br><hr>";
+  }
+}
+
+$plot_1 = "Peter Parker (Tobey Maguire) è un giovane e goffo liceale che fa una vita tranquilla: lavora nel giornale della scuola come fotografo ed è innamorato di Mary Jane Watson (Kirsten Durst), la vicina di casa. Rimasto orfano da bambino, vive con i suoi zii Ben e May a New York.";
+
+$plot_2 = "Iron Man, è un film del 2008 diretto da Jon Favreau. Tony Stark (Robert Downey Jr.), geniale quanto cinico inventore a capo delle Stark Industries, si reca in Afghanistan per presentare il nuovo missile da lui creato: Jericho. Al termine della presentazione, il convoglio diretto al jet privato di Stark viene attaccato da un gruppo di terroristi locali che rapiscono l’inventore, con l’intento di costringerlo a replicare la potente arma. A seguito dell’attentato Tony è stato colpito da un gran numero di schegge nel petto, formate dall\'esplosione della bomba, che potrebbero costargli la vita.";
+
+$plot_3 = "La lotta tra il bene (gli Autobots) e il male (i Decepticons), dal pianeta Cybertron si è spostata sulla Terra dove milioni di anni fa è caduto il Cubo di Energon, il potere supremo capace di infondere la vita ai Transformers. Sam Witwicky - nipote dell'esploratore che per primo, durante una missione nel Circolo Polare Artico sul finire del 1800, ebbe a che fare con Megatron, il capo dei Decepticons - è l'unico che può aiutare Optimus Prime e i suoi Autobots a ritrovare il cubo e distruggerlo prima che finisca nelle mani dei nemici.";
+
+// Creo un movie1
+$movie_1 = new Movie('Spider-Man', $plot_1, 'Action/Fantasy', 2003);
+// var_dump($movie_1);
+
+// Creo un movie2
+$movie_2 = new Movie('Iron Man', $plot_2, 'Action/Fantasy', 2008);
+// var_dump($movie_2);
+
+// Creo un movie3
+$movie_3 = new Movie('Transformers', $plot_3, 'Action/Fantasy', 2007);
+// var_dump($movie_3);
