@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../models/Actor.php';
+require_once __DIR__ . '/../models/Actor.php';
 
 // Creo attori Spider-Man
 $spider_man_actors = new Actor(['Tobey Maguire', 'Kirsten Dunst']);

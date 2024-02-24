@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../models/Director.php';
+require_once __DIR__ . '/../models/Director.php';
 
 // Creo un regista
 $sam_raimi = new Director('Sam Raimi');
