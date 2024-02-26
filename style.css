@@ -10,7 +10,8 @@ img {
 }
 
 .director,
-.actors {
+.actors,
+.year {
     margin: 0;
     font-weight: 500;
     font-size: 10px;

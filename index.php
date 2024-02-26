@@ -43,6 +43,8 @@ $page_label = 'PHP Movies';
                             <p class="director"><b>Regia: </b><?= $movie->director->full_name ?></p>
                             <p class="actors"><b>Attori:</b>
                                 <?= "{$movie->actors->main_actors[0]}, {$movie->actors->main_actors[1]}" ?></p>
+                            <p class="year"><b>Uscita:</b>
+                                <?= $movie->year ?></p>
                         </div>
                     </div>
                 </div>
